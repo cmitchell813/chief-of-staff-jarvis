@@ -1,0 +1,57 @@
+{
+  "name": "chief-of-staff-jarvis",
+  "version": "1.0.0",
+  "description": "Chief of Staff (Jarvis) — a local, voice-activated desktop command center for talking to your AI agents. Electron + macOS native speech.",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "appId": "com.example.chiefofstaff",
+    "productName": "CoS",
+    "copyright": "Chief of Staff — Jarvis",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "electron-main.js",
+      "preload.js",
+      "assets/**/*"
+    ],
+    "extraResources": [
+      { "from": "native/coco-speech", "to": "native/coco-speech" }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "CoS uses the microphone to hear your voice commands.",
+        "NSSpeechRecognitionUsageDescription": "CoS uses speech recognition to understand your voice commands."
+      },
+      "target": [
+        { "target": "dmg", "arch": ["arm64"] },
+        { "target": "dir", "arch": ["arm64"] }
+      ]
+    },
+    "dmg": {
+      "title": "Chief of Staff — Jarvis"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.15.3"
+  }
+}

@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/icon.iconset/
+build/icon.icns
+build/icon.svg.png
+
+# Native build artifacts (built via build script)
+native/coco-speech
+native/*.log
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Local env / secrets
+.env
+*.local
+
+# Bridge data (personal — never commit)
+*-Bridge/
+bridge/
+product-backlog.json
