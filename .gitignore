@@ -4,8 +4,6 @@ node_modules/
 # Build output
 dist/
 build/icon.iconset/
-build/icon.icns
-build/icon.svg.png
 
 # Native build artifacts (built via build script)
 native/coco-speech
